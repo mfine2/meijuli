@@ -1,0 +1,34 @@
+.list {
+	margin: 0 3px;
+}
+.list h3 {
+	margin-top: 10px;
+	font-size: 18px;
+	font-weight: bold;
+}
+.list-ul {
+}
+.list-item {
+	clear: both;
+	margin: 15px 0;
+}
+.list-item h6 {
+	font-size: 16px;
+	line-height: 30px;
+}
+.list-item div {
+	overflow: hidden;
+}
+.list-item div a {
+	float: left;
+	padding: 8px 18px;
+	margin: 5px 10px;
+	text-decoration: none;
+	background: #e6e6e6;
+	color: #666;
+	font-size: 14px;
+}
+.list-item div a:active {
+	background: #eee;
+}
+

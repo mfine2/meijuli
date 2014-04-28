@@ -1,0 +1,62 @@
+https://trac.ffmpeg.org/wiki/CentosCompilationGuide
+
+Yasm
+libx264
+libfdk_aac
+libmp3lame
+libopus
+libogg
+libvorbis
+libvpx https://webm.googlecode.com/files/libvpx-v1.3.0.tar.bz2
+
+http://cumulusclips.org/docs/install-ffmpeg-x264-on-centos/
+--Xvid--
+wget http://downloads.xvid.org/downloads/xvidcore-1.3.2.tar.gz
+tar -zxf xvidcore-1.3.2.tar.gz
+cd xvidcore/build/generic
+./configure --prefix="$HOME/ffmpeg_build"
+make 
+make install
+make distclean
+
+--Faac--
+wget http://downloads.sourceforge.net/faac/faac-1.28.tar.gz
+tar -xzf faac-1.28.tar.gz
+cd faac-1.28
+./configure --prefix="$HOME/ffmpeg_build"
+make
+make install
+make distclean
+
+--OpenCore AMR--
+wget http://downloads.sourceforge.net/project/opencore-amr/opencore-amr/0.1.2/opencore-amr-0.1.2.tar.gz
+tar -xzf opencore-amr-0.1.2.tar.gz
+cd opencore-amr-0.1.2
+./configure --prefix="$HOME/ffmpeg_build"
+make
+make install
+make distclean
+
+--Theora--
+wget http://downloads.xiph.org/releases/theora/libtheora-1.1.1.tar.bz2
+tar -xjf libtheora-1.1.1.tar.bz2
+cd libtheora-1.1.1
+./configure --prefix="$HOME/ffmpeg_build"
+make
+make install
+make distclean
+
+http://cumulusclips.org/docs/install-ffmpeg-x264-on-centos/
+
+PKG_CONFIG_PATH="$HOME/ffmpeg_build/lib/pkgconfig"
+
+./configure --prefix="$HOME/ffmpeg_build" --extra-cflags="-I$HOME/ffmpeg_build/include" --extra-ldflags="-L$HOME/ffmpeg_build/lib" --bindir="$HOME/bin" --extra-libs=-ldl --enable-gpl --enable-nonfree --enable-libfdk_aac --enable-libmp3lame --enable-libopus --enable-libvorbis --enable-libvpx --enable-libx264 --enable-version3 --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libfaac --enable-libtheora --enable-libxvid
+
+
+ffmpeg -i yujian.mkv -vcodec libx264 yujian.mp4
+
+vim /etc/profile
+PATH=$PATH:/root/bin/
+source profile
+!!!for su user!!!
+

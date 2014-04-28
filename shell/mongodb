@@ -1,0 +1,7 @@
+./bin/mongod --config  mongodb.conf 
+./bin/mongod --shutdown --config  mongodb.conf 
+
+notice: confirm your path exsis!!!
+
+echo "/usr/local/mongodb/bin/mongod --config /usr/local/mongodb/mongodb.conf" >> /etc/rc.local
+echo "node home/lixiaoye/Desktop/meijuli/server&" >> /etc/rc.local

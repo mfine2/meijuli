@@ -1,0 +1,133 @@
+html, body {
+	background: #000;
+}
+.video {
+	position: relative;
+	margin: 0 auto;
+	cursor: pointer;
+}
+.video video {
+	display: block;<!--why not block bigger than set-->
+}
+.srt {
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+	text-align: center;
+	color: #fff;
+	font-weight: bold;
+	background: rgba(0, 0, 0, 0.3);
+	height: 68px;
+	overflow: hidden;
+}
+.srt .lang-extra {
+}
+.srt .lang-en {
+	position: relative;
+	top: -76px;
+	width: 100%;
+	font-size: 28px;
+	line-height: 7;
+	-webkit-user-select: auto;
+}
+.srt .lang-zh {
+	position: relative;
+	top: -160px;
+	width: 100%;
+	font-size: 18px;
+	line-height: 1.5;
+	-webkit-user-select: none;
+}
+.controls {
+	position: absolute;
+	bottom: 0;
+	width: 48px;
+	text-align: center;
+	font-size: 48px;
+	color: #fff;
+	font-weight: bold;
+	text-decoration: none;
+}
+.play {
+	left: 10px;
+	z-index: 100;
+}
+.list {
+	right: 60px;
+	z-index: 100;
+}
+.words {
+	right: 10px;
+	z-index: 100;
+}
+.settingPannel {
+	display: none;
+	z-index: 10;
+	position: absolute;
+	top: 50%;
+	background: rgba(0, 0, 0, 0.4);
+	font-size: 12px;
+	font-weight: bold;
+	text-align: center;
+	padding:6px 1px;
+}
+.settingPannel a {
+	display: block;
+	padding: 15px 10px;
+	margin: 6px 6px;
+	color: #fff;
+	background: rgba(255,255,255,0.1);
+	text-decoration: none;
+}
+.settingPannel a:active {
+	background: rgba(255,255,255,0.2);
+}
+.leftPannel {
+	left: 0;
+	margin-top: -150px;<!--also minus srt heiht-->
+	height: 156px;
+}
+.rightPannel{
+	right: 0;
+	margin-top: -176px;
+	height: 206px;
+}
+.dict {
+	position: absolute;
+	margin: 0 auto;
+	padding: 5px 0;
+	background: rgba(0, 0, 0, 0.2);
+	line-height: 1.4;
+	width: 100%;
+	text-align: center;
+	color: #fff;
+}
+.dict h3 {
+	font-size: 16px;
+	font-weight: bold;
+}
+.dict span {
+	font-size: 12px;
+	font-weight: normal;
+	margin-left: 8px;
+}
+.dict p {
+	margin-top: 6px;
+	font-size: 12px;
+}
+.touchTip {
+	display: none;
+	position: absolute;
+	top: 50%;
+	margin-top: -18px;
+	left: 50%;
+	margin-left: -80px;
+	background: rgba(0, 0, 0, 0.6);
+	font-size: 12px;
+	font-weight: bold;
+	width: 150px;
+	height: 36px;
+	line-height: 36px;
+	text-align: center;
+	color: #fff;
+}
