@@ -83,7 +83,7 @@ var parseSrtFiles = function() {
 	var fileName;
 	var obj;
 
-	if(!path.existsSync(outputDir)){
+	if(!fs.existsSync(outputDir)){
 		fs.mkdirSync(outputDir);
 	}
 
