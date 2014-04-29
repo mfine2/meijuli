@@ -1,0 +1,14 @@
+{
+  "name": "meijuli",
+  "description": "meijuli",
+  "version": "0.1",
+  "author": {
+    "name": "lixiaoye",
+    "email": "lixinyeorg@163.com"
+  },
+  "dependencies": {
+    "express": "*",
+    "iconv-lite": "*",
+    "mongodb": "*"
+  }
+}
