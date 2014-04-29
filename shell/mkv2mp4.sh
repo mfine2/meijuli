@@ -1,13 +1,16 @@
 #!/bin/sh
 function mkv2mp4(){
 	inpath=$1
+	outpath=$2
 	if [ -f $inpath ]; then  
 		dirname=$(dirname $inpath)"/"
 		fullFileName=$(basename $inpath)
 		filename=${fullFileName%.*}
 		extname=${fullFileName##*.} 
-		outpath=$dirname"mp4/"
-		logpath=$outpath"log.log"
+		if [ ! -d $outpath ]; then
+			outpath=$dirname"mp4/"
+		fi
+		logpath=$outpath"log.txt"
 		$(mkdir -p $outpath)
 
 		if [ $extname = "mkv" ]; then
@@ -34,15 +37,15 @@ function convertDir(){
 		len=${#mydir}
 		laststr=${mydir:(len-1):len}
 		if [ $laststr = "/" ]; then
-			mkv2mp4 $mydir$myfile
+			mkv2mp4 $mydir$myfile $2
 		else
-			mkv2mp4 $$mydir"/"myfile
+			mkv2mp4 $$mydir"/"myfile $2
 		fi
 	done
 }
 
 function convertFile(){
-	mkv2mp4 $1
+	mkv2mp4 $1 $2
 }
 
 myPathOrFile=$1;
@@ -53,7 +56,7 @@ fi
 #can not get it is a file or a path by [-d path] or [-f path]
 $(cd $myPathOrFile 1>&- 2>&- )
 if [ $? -eq 0 ]; then
-	convertDir $myPathOrFile
+	convertDir $myPathOrFile $2
 else
-	convertFile $myPathOrFile
+	convertFile $myPathOrFile $2
 fi
