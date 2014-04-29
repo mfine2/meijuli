@@ -499,6 +499,8 @@
 		var curTime = getCurTimeLocal();
 		if(!reqInfo) {
 			location.href="list.html";
+		} else {
+			document.title = "S" + reqInfo.season + ".E" + reqInfo.episode + "." + reqInfo.series + " meijuli.try4.org";
 		}
 		getSrcAndSrt(function(src) {
 			videoEl.src=src;
