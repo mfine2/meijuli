@@ -4,7 +4,7 @@
 	var templateObj = function(obj) {
 		var tmpl = "";
 		if(obj.errorCode === 0 && obj.basic) {
-			tmpl = tmpl + "<li class='words-item'><h6><b>" + obj.iquery + "</b><span>[" + obj.basic.phonetic + "]</span>" + "</h6>";
+			tmpl = tmpl + "<li class='words-item'><h6><b>" + obj.iquery + "</b><span>[" + (obj.basic.phonetic || " ") + "]</span>" + "</h6>";
 			tmpl = tmpl + "<p>" +obj.basic.explains.join("</br>") + "</p></li>";
 		}
 		return tmpl;

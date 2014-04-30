@@ -228,7 +228,7 @@
 			dictDetailEl.innerHTML = "";
 		} else {
 			if(obj.basic) {
-				tmpl = tmpl + "<h3>" + obj.iquery + "<span>[" + obj.basic.phonetic + "]</span>" + "</h3>";
+				tmpl = tmpl + "<h3>" + obj.iquery + "<span>[" + (obj.basic.phonetic || " ") + "]</span>" + "</h3>";
 				tmpl = tmpl + "<p>" +obj.basic.explains.join("</br>") + "</p>";
 				dictDetailEl.innerHTML = tmpl;
 			} else {
